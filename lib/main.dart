@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:khadamti/ui/maps/general_map_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:khadamti/ui/maps/stationView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(),
       home: const MyHomePage(),
     );
@@ -32,7 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
   //screens
   //when adding a screen to list don't forget to add the icon at iconList
 
-  var screens = [GeneraleMap(), Center(child: Text('person'))];
+  var screens = [GeneraleMap(), StationView()];
+  //GeneraleMap(), Center(child: Text('person'))];
 
   //icons list
   List<PersistentBottomNavBarItem> _navBarsItems() {
