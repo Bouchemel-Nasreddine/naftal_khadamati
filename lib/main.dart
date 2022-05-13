@@ -26,24 +26,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  PersistentTabController _controller =
-      PersistentTabController(initialIndex: 0);
+  late PersistentTabController _controller;
 
   //screens
   //when adding a screen to list don't forget to add the icon at iconList
 
-  var screens = [GeneraleMap(), Center(child: Text('person'))];
+  var screens = [const GeneraleMap(), const Center(child: Text('person'))];
 
   //icons list
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.map),
+        icon: const Icon(Icons.map),
+        title: '.',
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.person),
+        icon: const Icon(Icons.person),
+        title: '.',
       ),
     ];
+  }
+
+  @override
+  void initState() {
+    _controller = PersistentTabController(initialIndex: 0);
+    super.initState();
   }
 
   @override
@@ -52,8 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: PersistentTabView(
           context,
+          controller: _controller,
           screens: screens,
           items: _navBarsItems(),
+          navBarStyle: NavBarStyle.style12,
         ),
       ),
     );
