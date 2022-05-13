@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
   //screens
   //when adding a screen to list don't forget to add the icon at iconList
 
-  var screens = [GeneraleMap()];
+  var screens = [GeneraleMap(), Center(child: Text('person'))];
 
   //icons list
   List<PersistentBottomNavBarItem> _navBarsItems() {
@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: PersistentTabView(
           context,
-          screens: [GeneraleMap(), Center(child: Text('person'))],
+          screens: screens,
           items: _navBarsItems(),
         ),
       ),
