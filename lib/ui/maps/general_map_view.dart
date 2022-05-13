@@ -31,7 +31,10 @@ class _GeneraleMapState extends State<GeneraleMap> {
       36.743265886401566,
       3.18631274195444,
     ),
-    LatLng(36.7682893125738, 3.2499038916800704)
+    LatLng(
+      36.7682893125738,
+      3.2499038916800704,
+    ),
   ];
 
   void onMapCreated(GoogleMapController controller) async {
@@ -75,7 +78,7 @@ class _GeneraleMapState extends State<GeneraleMap> {
             bottom: size.height * 0.02,
           ),
           child: FloatingActionButton.extended(
-            onPressed: () {},
+            onPressed: goToBestLocation,
             label: Text(
               'Best station',
               style: GoogleFonts.poppins(
@@ -164,5 +167,10 @@ class _GeneraleMapState extends State<GeneraleMap> {
       position: coordinates,
     );
     markerSet[id] = marker;
+  }
+
+  void goToBestLocation() {
+    _mapController.animateCamera(CameraUpdate.newCameraPosition(
+        CameraPosition(target: stationLocations[2], zoom: 14.5, tilt: 50.0)));
   }
 }
