@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:khadamti/ui/maps/stationView.dart';
 import 'package:location/location.dart';
 
 import '../components/colored_container.dart';
@@ -31,12 +30,12 @@ class _GeneraleMapState extends State<GeneraleMap> {
       3.2242709934766443,
     ),
     LatLng(
-      36.743265886401566,
-      3.18631274195444,
-    ),
-    LatLng(
       36.7682893125738,
       3.2499038916800704,
+    ),
+    LatLng(
+      36.743265886401566,
+      3.18631274195444,
     ),
   ];
 
@@ -83,7 +82,7 @@ class _GeneraleMapState extends State<GeneraleMap> {
           child: FloatingActionButton.extended(
             onPressed: goToBestLocation,
             label: Text(
-              'Best station',
+              'Meilleure station',
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w500,
                 fontSize: 13,
@@ -169,7 +168,7 @@ class _GeneraleMapState extends State<GeneraleMap> {
 
   void goToBestLocation() {
     _mapController.animateCamera(CameraUpdate.newCameraPosition(
-        CameraPosition(target: stationLocations[2], zoom: 14.5, tilt: 50.0)));
+        CameraPosition(target: stationLocations[1], zoom: 14.5, tilt: 50.0)));
   }
 
   showBottomSheet() {

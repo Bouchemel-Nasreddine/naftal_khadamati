@@ -3,7 +3,8 @@
    <application
         android:label="khadamti"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon"
+        >
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyD767kphkpdpM7ukj1KgKxJ_i5jtCKOFXk"/>
         <activity

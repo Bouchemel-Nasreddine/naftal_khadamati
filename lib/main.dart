@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:khadamti/ui/maps/general_map_view.dart';
+import 'package:khadamti/ui/payement/qr_scanner.dart';
+import 'package:khadamti/ui/profile/profile.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:khadamti/ui/maps/stationView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   //screens
   //when adding a screen to list don't forget to add the icon at iconList
 
-  var screens = [GeneraleMap(), StationView()];
+  var screens = [GeneraleMap(), QrCodeScanner(), Profile()];
   //GeneraleMap(), Center(child: Text('person'))];
 
   //icons list
@@ -41,6 +42,10 @@ class _MyHomePageState extends State<MyHomePage> {
     return [
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.map),
+        title: '.',
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(Icons.scanner),
         title: '.',
       ),
       PersistentBottomNavBarItem(
